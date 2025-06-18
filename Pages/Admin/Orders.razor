@@ -1,0 +1,84 @@
+﻿@page "/admin/orders"
+@layout AdminLayout
+<h2>Order Management</h2>
+<div class="orders-table">
+<table class="table">
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Items</th>
+<th>Total</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#001</td>
+<td>Jean Dupont</td>
+<td>1x Margherita, 1x Pepperoni</td>
+<td>¿23.98</td>
+<td><span class="badge badge-warning">Preparing</span></td>
+<td>
+<button class="btn btn-sm btn-success">Complete</button>
+<button class="btn btn-sm btn-danger">Cancel</button>
+</td>
+</tr>
+<tr>
+<td>#002</td>
+<td>Marie Martin</td>
+<td>1x Hawaiian</td>
+<td>¿11.99</td>
+<td><span class="badge badge-success">Ready</span></td>
+<td>
+<button class="btn btn-sm btn-primary">Deliver</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<style>
+.orders-table {
+overflow-x: auto;
+}
+.table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 1rem;
+}
+.table th,
+.table td {
+padding: 0.75rem;
+text-align: left;
+border-bottom: 1px solid #dee2e6;
+}
+.table th {
+background-color: #f8f9fa;
+font-weight: bold;
+color: #495057;
+		}
+
+	.badge {
+		padding: 0.4rem 0.8rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		font-weight: bold;
+	}
+
+	.badge-warning {
+		background-color: #ffc107;
+		color: #212529;
+	}
+
+	.badge-success {
+		background-color: #28a745;
+		color: white;
+	}
+
+	.btn-sm {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.8rem;
+		margin-right: 0.5rem;
+	}
+</style>

@@ -1,0 +1,63 @@
+﻿@inherits LayoutComponentBase
+<div class="pizza-layout">
+<div class="pizza-header">
+<h1>Blazing Pizza</h1>
+<nav class="pizza-nav">
+<NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
+<NavLink href="orders">My Orders</NavLink>
+<NavLink href="checkout">Checkout</NavLink>
+</nav>
+</div>
+<div class="pizza-content">
+@Body
+</div>
+<div class="pizza-footer">
+<p>&copy; 2024 Blazing Pizza - Made with and Blazor</p>
+</div>
+</div>
+<style>
+.pizza-layout {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+.pizza-header {
+background: linear-gradient(135deg, #ff6b35, #ff8c42);
+color: white;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.pizza-header h1 {
+margin: 0;
+			font-size: 2rem;
+		}
+
+	.pizza-nav a {
+		color: white;
+		text-decoration: none;
+		margin-left: 1rem;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		transition: background-color 0.3s;
+	}
+
+		.pizza-nav a:hover,
+		.pizza-nav a.active {
+			background-color: rgba(255, 255, 255, 0.2);
+		}
+
+	.pizza-content {
+		flex: 1;
+		padding: 2rem;
+	}
+
+	.pizza-footer {
+		background-color: #f8f9fa;
+		text-align: center;
+		padding: 1rem;
+		border-top: 1px solid #dee2e6;
+	}
+</style>

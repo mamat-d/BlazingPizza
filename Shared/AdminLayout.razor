@@ -1,0 +1,62 @@
+﻿@layout PizzaLayout
+@inherits LayoutComponentBase
+<div class="admin-wrapper">
+<div class="admin-sidebar">
+<h3>Administration</h3>
+<nav class="admin-nav">
+<NavLink href="admin/orders">Orders Management</NavLink>
+<NavLink href="admin/pizzas">Pizza Management</NavLink>
+<NavLink href="admin/users">User Management</NavLink>
+</nav>
+</div>
+<div class="admin-content">
+@Body
+</div>
+</div>
+<style>
+.admin-wrapper {
+display: flex;
+min-height: 500px;
+gap: 2rem;
+}
+.admin-sidebar {
+background: #f8f9fa;
+border-radius: 8px;
+padding: 1.5rem;
+min-width: 250px;
+border: 1px solid #dee2e6;
+}
+.admin-sidebar h3 {
+color: #495057;
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+border-bottom: 2px solid #ff6b35;
+}
+.admin-nav {
+display: flex;
+flex-direction: column;
+}
+.admin-nav a {
+			color: #495057;
+			text-decoration: none;
+			padding: 0.75rem 1rem;
+			margin: 0.25rem 0;
+			border-radius: 4px;
+			transition: all 0.3s;
+		}
+
+			.admin-nav a:hover,
+			.admin-nav a.active {
+				background-color: #ff6b35;
+				color: white;
+			}
+
+	.admin-content {
+		flex: 1;
+		background: white;
+		border-radius: 8px;
+		padding: 1.5rem;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		border: 1px solid #dee2e6;
+	}
+</style>

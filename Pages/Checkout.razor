@@ -1,20 +1,139 @@
 ﻿@page "/checkout"
-<div class="main">
-<div class="checkout-cols">
-<div class="checkout-order-details">
-<h4>Review order</h4>
+@layout PizzaLayout
+<div class="checkout-container">
+<h2>Review Your Order</h2>
+<div class="checkout-sections">
+<div class="order-summary">
+<h3>Order Summary</h3>
 <div class="checkout-item">
-<div>
-<div>Margherita</div>
-<div>Extra pepperoni, extra cheese</div>
+<div class="item-details">
+<div class="item-name">Margherita Pizza</div>
+<div class="item-extras">Extra pepperoni, extra cheese</div>
 </div>
-<div class="checkout-item-cost">
-¿10.99
+<div class="item-cost">¿10.99</div>
+</div>
+<div class="checkout-item">
+<div class="item-details">
+<div class="item-name">Pepperoni Pizza</div>
+<div class="item-extras">Large size</div>
+</div>
+<div class="item-cost">¿12.99</div>
+</div>
+<div class="total-section">
+<div class="total-line">
+<span>Subtotal:</span>
+<span>¿23.98</span>
+</div>
+<div class="total-line">
+<span>Delivery:</span>
+<span>¿2.50</span>
+</div>
+<div class="total-line total-final">
+<span>Total:</span>
+<span>¿26.48</span>
 </div>
 </div>
 </div>
+<div class="delivery-info">
+<h3>Delivery Information</h3>
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" class="form-control" placeholder="Enter your name"/></div>
+<div class="form-group">
+<label>Address</label>
+<textarea class="form-control" rows="3" placeholder="Enter delivery address" />
 </div>
-<button class="checkout-button btn btn-warning">
-Place order
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" class="form-control" placeholder="Enter phone number"/></div>
+</div>
+</div>
+<button class="checkout-button btn btn-success btn-lg">
+Place Order
 </button>
 </div>
+<style>
+.checkout-container {
+max-width: 900px;
+margin: 0 auto;
+}
+.checkout-sections {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+margin: 2rem 0;
+}
+.order-summary, .delivery-info {
+background: white;
+border-radius: 8px;
+		padding: 1.5rem;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		border: 1px solid #dee2e6;
+	}
+
+	.checkout-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0;
+		border-bottom: 1px solid #f8f9fa;
+	}
+
+	.item-name {
+		font-weight: bold;
+		color: #ff6b35;
+	}
+
+	.item-extras {
+		font-size: 0.9rem;
+		color: #6c757d;
+	}
+
+	.item-cost {
+		font-weight: bold;
+		font-size: 1.1rem;
+	}
+
+	.total-section {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 2px solid #dee2e6;
+	}
+
+	.total-line {
+		display: flex;
+		justify-content: space-between;
+		margin: 0.5rem 0;
+	}
+
+	.total-final {
+		font-weight: bold;
+		font-size: 1.2rem;
+		color: #ff6b35;
+		border-top: 1px solid #dee2e6;
+		padding-top: 0.5rem;
+		margin-top: 0.5rem;
+}
+.form-group {
+margin-bottom: 1rem;
+}
+.form-group label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+color: #495057;
+}
+.form-control {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #ced4da;
+border-radius: 4px;
+font-size: 1rem;
+}
+.checkout-button {
+width: 100%;
+padding: 1rem;
+font-size: 1.2rem;
+margin-top: 2rem;
+}
+</style>
