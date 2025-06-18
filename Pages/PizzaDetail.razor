@@ -1,0 +1,29 @@
+﻿@page "/pizza/{pizzaName}"
+<div class="main">
+	<h1>@PizzaName Pizza</h1>
+	<div class="pizza-info">
+		<h3>Description</h3>
+		<p>Delicious @PizzaName pizza made with the finest ingredients.</p>
+		<h3>Price</h3>
+		<p>¿@Price.ToString("F2")</p>
+		<button class="btn btn-success" @onclick="AddToOrder">
+			Add to Order
+		</button>
+	</div>
+</div>
+@code {
+	[Parameter]
+	public string PizzaName { get; set; }
+	private decimal Price { get; set; }
+	protected override void OnInitialized()
+	{
+		// Simuler le prix en fonction du nom de la pizza
+		Price = PizzaName?.Length * 1.5m + 8.0m ?? 10.0m;
+	}
+	private void AddToOrder()
+	{
+		// Logique pour ajouter la pizza à la commande
+		// Pour cet exemple, nous affichons juste un message
+		Console.WriteLine($"Added {PizzaName} pizza to order");
+	}
+}

@@ -1,0 +1,38 @@
+﻿@page "/pizza/id/{pizzaId:int}"
+<div class="main">
+<h1>Pizza #@PizzaId</h1>
+<div class="pizza-info">
+<h3>Pizza Information</h3>
+<p>Displaying details for pizza with ID: @PizzaId</p>
+<h3>Name</h3>
+<p>@GetPizzaName()</p>
+<h3>Price</h3>
+<p>¿@GetPrice().ToString("F2")</p>
+</div>
+</div>
+@code {
+		[Parameter]
+		public int PizzaId { get; set; }
+		private string GetPizzaName()
+		{
+			return PizzaId switch
+			{
+				1 => "Margherita",
+				2 => "Pepperoni",
+				3 => "Quattro Stagioni",
+				4 => "Hawaiian",
+				_ => "Special Pizza"
+			};
+		}
+		private decimal GetPrice()
+		{
+			return PizzaId switch
+			{
+				1 => 8.99m,
+				2 => 10.99m,
+				3 => 12.99m,
+				4 => 11.99m,
+				_ => 15.99m
+			};
+		}
+}
